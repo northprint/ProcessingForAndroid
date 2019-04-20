@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // FrameLayoutを作成
         val frame = FrameLayout(this)
         frame.id = CompatUtils.getUniqueViewId()
         setContentView(
@@ -18,7 +20,9 @@ class MainActivity : AppCompatActivity() {
             ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         )
 
+        // PAppletクラスを継承したSketchクラスをNewする
         val sketch = Sketch()
+        // PFragmentで描画
         val fragment = PFragment(sketch)
         fragment.setView(frame, this)
     }
